@@ -1,8 +1,8 @@
 //
-//  Recipes.swift
+//  Recipe.swift
 //  groceryListCreator
 //
-//  Created by Abby Jamieson on 4/5/19.
+//  Created by Zachary Chucka on 4/5/19.
 //  Copyright © 2019 Zachary Chucka. All rights reserved.
 //
 
@@ -12,10 +12,10 @@ import Foundation
 class Recipe: Codable {
     var recipeName: String
     var recipeDesc: String
-    var directions: String
-    var ingredientsList: String
+    var directions: [String]
+    var ingredientsList: [String]
     
-    init(name: String, description: String, directions: String, ingredients: String) {
+    init(name: String, description: String, directions: [String], ingredients: [String]) {
         self.recipeName = name
         self.recipeDesc = description
         self.directions = directions

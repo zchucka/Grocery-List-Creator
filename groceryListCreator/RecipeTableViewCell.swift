@@ -1,9 +1,9 @@
 //
-//  DogTableViewCell.swift
+//  Recipe TableViewCell.swift
 //  Table View Fun
 //
-//  Created by Gina Sprint on 10/18/18.
-//  Copyright © 2018 Gina Sprint. All rights reserved.
+//  Created by Zachary Chucka on 10/18/18.
+//  Copyright © 2019 Zachary Chucka. All rights reserved.
 //
 
 import UIKit
@@ -26,6 +26,8 @@ class RecipeTableViewCell: UITableViewCell {
     
     func update(with recipe: Recipe) {
         // update the recipe for the information that we are putting in the cells
+        nameLabel.text = recipe.recipeName
+        descriptionLabel.text = recipe.recipeDesc
     }
     
 }

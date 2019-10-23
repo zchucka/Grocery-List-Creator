@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  MainMenuViewController.swift
 //  groceryListCreator
 //
-//  Created by Abby Jamieson on 4/5/19.
+//  Created by Zachary Chucka on 4/5/19.
 //  Copyright © 2019 Zachary Chucka. All rights reserved.
 //
 
