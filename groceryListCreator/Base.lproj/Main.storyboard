@@ -123,7 +123,7 @@
                     <navigationItem key="navigationItem" id="u1V-yI-aqR">
                         <barButtonItem key="rightBarButtonItem" title="Item" style="done" systemItem="add" id="wfC-ob-xPS">
                             <connections>
-                                <segue destination="ifj-qB-QUn" kind="show" id="PCR-Bc-YPM"/>
+                                <segue destination="ifj-qB-QUn" kind="show" identifier="" id="PCR-Bc-YPM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -185,7 +185,7 @@
                     <navigationItem key="navigationItem" id="l4F-9p-Tbr">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="nya-cF-NHn">
                             <connections>
-                                <segue destination="ifj-qB-QUn" kind="show" id="7Kt-Tw-7gC"/>
+                                <segue destination="ifj-qB-QUn" kind="show" identifier="editRecipe" id="7Kt-Tw-7gC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -254,7 +254,11 @@
                         <viewLayoutGuide key="safeArea" id="RLs-qx-FAL"/>
                     </view>
                     <navigationItem key="navigationItem" id="gmj-oq-Ba2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="29A-IW-v4f"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="29A-IW-v4f">
+                            <connections>
+                                <action selector="savePressed" destination="ifj-qB-QUn" id="KKq-wO-0hk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="recipeDesc" destination="FiT-qg-YBd" id="CMk-As-lQB"/>
