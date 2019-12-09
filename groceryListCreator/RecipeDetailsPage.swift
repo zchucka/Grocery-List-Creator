@@ -48,4 +48,15 @@ class RecipeDetailsPage: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "editRecipe" {
+                if let newRecipeVC = segue.destination as? newRecipe {
+                    // TO DO: send the information of the current recipe to the newRecipeVC
+                    newRecipeVC.recipe = self.recipe
+                }
+            }
+        }
+    }
+    
 }

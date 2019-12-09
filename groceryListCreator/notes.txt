@@ -1,0 +1,12 @@
+A track of notes to remind myself what I'm working on
+
+Things to do:
+1. The navigation controller isn't working well and may need to be removed
+2. Save right now adds a new recipe even if editing
+3. Adjust the formating and explain how to get proper formatting for the lists
+4. Add all of the details for grocery list builder
+    a. start with a blank list
+    b. plus in the top right corner to add recipes to it
+    c. swipe to delete
+    d. a button to press to look at the grocery list
+

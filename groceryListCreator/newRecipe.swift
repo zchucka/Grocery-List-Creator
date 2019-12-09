@@ -16,6 +16,41 @@ class newRecipe: UIViewController {
     @IBOutlet var recipeDirections: UITextField!
     var recipe: Recipe? = nil
     
+    // override the viewDidLoad to load in the data if we are editing
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let recipe = recipe {
+            recipeName.text = recipe.recipeName
+            recipeDesc.text = recipe.recipeDesc
+            var Ingredients: String = ""
+            var Directions: String = ""
+            
+            for step in recipe.ingredientsList {
+                if Ingredients == "" {
+                    Ingredients = step
+                } else {
+                    Ingredients = Ingredients + "\n" + step
+                }
+            }
+            
+            var count = 1
+            for step in recipe.directions {
+                if Directions == "" {
+                    Directions = "\(count). "  + step
+                } else {
+                    Directions = Directions + "\n" + "\(count). \(step)"
+                }
+                count = count + 1
+            }
+            
+            recipeIngredients.text = Ingredients
+            recipeDirections.text = Directions
+        } else {
+            //if there is no recipe, aka adding instead of editing, lets give instructions
+        }
+    }
+    
     // saves the recipe given that some information is provided
     func saveRecipe() {
         // down here, we need to send the recipes to myRecipe and eventually save to database so that shit doesn't get wiped
@@ -66,16 +101,13 @@ class newRecipe: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
-            if identifier == "editRecipe" {
-                if let RecipeDetailsVC = segue.destination as? RecipeDetailsPage {
-                    RecipeDetailsVC.recipe = self.recipe
-                }
-            } else if identifier == "addRecipe" {
+            if identifier == "saveRecipe" {
+                saveRecipe()
                 if let RecipeTable = segue.destination as? MyRecipesViewController {
                     if let newRecipe = self.recipe {
                         RecipeTable.recipes.append(newRecipe)
                     } else {
-                        print("somehow we messed ups")
+                        print("somehow we messed up")
                     }
                 }
             }
